@@ -8,3 +8,4 @@ py
 
 > [!NOTE]
 > メモ
+> kqh)ZiMZm8yM@ip
