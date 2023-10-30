@@ -98,3 +98,32 @@ export LD_LIBRARY_PATH=/usr/local/cuda-11.8/lib${LD_LIBRARY_PATH:+:${LD_LIBRARY_
 ## cuDNNのインストール
 
 > kqh)ZiMZm8yM@ip
+
+UbuntuのcuDNN 8.7をダウンロードする　[リンク](https://developer.nvidia.com/downloads/c118-cudnn-local-repo-ubuntu2204-8708410-1amd64deb)
+
+※ログインが必要
+
+ダウンロードしたファイルをWSLのホームディレクトリ下に置く
+
+
+上から順に実行
+```
+sudo apt-get install zlib1g
+sudo dpkg -i cudnn-local-repo-ubuntu2204-8.7.0.84_1.0-1_amd64.deb
+sudo cp /var/cudnn-local-repo-*/cudnn-local-*-keyring.gpg /usr/share/keyrings/
+sudo apt-get update
+sudo apt-get install libcudnn8=8.7.0.84-1+cuda11.8
+sudo apt-get install libcudnn8-dev=8.7.0.84-1+cuda11.8
+sudo apt-get install libcudnn8-samples=8.7.0.84-1+cuda11.8
+```
+
+## Python環境
+```
+sudo apt install python3.10-venv
+python3 -m venv --system-site-packages ~/venv
+source ~/venv/bin/activate
+pip install --upgrade pip
+pip install tensorflow
+pip install pillow
+pip install matplotlib
+```
