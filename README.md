@@ -117,7 +117,7 @@ sudo apt-get install libcudnn8-dev=8.7.0.84-1+cuda11.8
 sudo apt-get install libcudnn8-samples=8.7.0.84-1+cuda11.8
 ```
 
-## Python環境
+## Python環境構築
 ```
 sudo apt install python3.10-venv
 python3 -m venv --system-site-packages ~/venv
@@ -127,3 +127,47 @@ pip install tensorflow
 pip install pillow
 pip install matplotlib
 ```
+
+## 訓練環境構築
+```
+mkdir ~/AI_Driver
+cd ~/AI_Driver
+wget http://ma2.la.coocan.jp/AI_Driver/tt02/download/train.py
+wget https://raw.githubusercontent.com/mituhiromatuura/AI_Driver/main/maketensor.py
+sudo apt install zip unzip
+sudo apt install openssh-server
+```
+
+## 環境変数
+
+~/.bashrc の最後に以下を追加
+```
+source ~/venv/bin/activate
+cd ~/AI_Driver
+export PATH="/usr/local/cuda/bin:$PATH"
+export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
+```
+
+## 動作確認
+
+
+```
+unzip log_202309271634_d.zip
+time python train.py log 6
+```
+
+GPUなし：57秒
+
+GPUあり：45秒
+
+## Windowsアプリのインストール
+
+[RealVNC Viewer](https://www.realvnc.com/en/connect/download/viewer/)
+
+[TeraTerm](https://ttssh2.osdn.jp/)
+
+[WinSCP](https://winscp.net/eng/docs/lang:jp)
+
+[NetworkScanner](https://www.softperfect.com/products/networkscanner/)
+
+[VScode](https://code.visualstudio.com/)
