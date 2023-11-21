@@ -99,6 +99,22 @@ export LD_LIBRARY_PATH=/usr/local/cuda-11.8/lib64${LD_LIBRARY_PATH:+:${LD_LIBRAR
 export LD_LIBRARY_PATH=/usr/local/cuda-11.8/lib${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 ```
 
+> [!CAUTION]
+>
+> wget実行時に、
+>
+> ```
+>  Unable to locally verify the issuer's authority.
+>
+> To connect to developer.download.nvidia.com insecurely, use `--no-check-certificate'.
+> ```
+>
+> と表示された場合は、
+>
+> ```sudo apt-get install ca-cartificate```
+>
+> を実行する
+
 ## cuDNNのインストール
 
 > kqh)ZiMZm8yM@ip
